@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="mr-4 ml-4">
+
+  <div class="row">
+    <!-- Main Form -->
+    <div class="col-12 col-md-6">
+      <h1 class="display-4 mt-4">Amazon Price History</h1>
+      <p class="text-muted text-right">Detailed Price History charts for over 2 billion Amazon products.</p>
+
+      <form class="mt-4" id="queryForm" method="POST" action="{{ url_for('public.home') }}" role="query">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+        <div class="input-group">
+          {{form.address(placeholder="Address (e.g. https://www.amazon.com/dp/B08N5N6RSS/)",
+          class_="form-control")}}
+          <div class="input-group-append">
+            <button class="btn btn-primary" type="submit" id="button-submit">Query</button>
+          </div>
+        </div>
+
+        <label class="form-check-label pt-0 mr-1" for="range">Range (days):</label>
+        <div class="form-check form-check-inline" id="range">
+          <input class="form-check-input" type="radio" name="range" id="Radios1" value="7">
+          <label class="form-check-label mr-2" for="Radios1">7</label>
+          <input class="form-check-input" type="radio" name="range" id="Radios2" value="31">
+          <label class="form-check-label mr-2" for="Radios2">31</label>
+          <input class="form-check-input" type="radio" name="range" id="Radios3" value="90" checked>
+          <label class="form-check-label mr-2" for="Radios3">90</label>
+          <input class="form-check-input" type="radio" name="range" id="Radios4" value="365">
+          <label class="form-check-label" for="Radios4">365</label>
+        </div>
+      </form>
+    </div>
+
+    <!-- demo -->
+    <div class="col-12 col-md-6 mt-4 mx-auto">
+      <div class="fake-browser-ui hoverable">
+        <div class="frame">
+          <span class="red"></span>
+          <span class="blue"></span>
+          <span class="orange"></span>
+        </div>
+        <img class="img-fluid" src="{{static_url_for('static', filename='build/img/pricehistory.png')}}">
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,146 @@
+/* =============================================================================
+   App specific CSS file.
+   ========================================================================== */
+
+/* universal */
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  padding-top: 60px;
+  background: var(--background-url);
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.container-narrow{
+  margin: 0 auto;
+  max-width: 700px;
+}
+
+/* Forms */
+
+.navbar-form input[type="text"],
+.navbar-form input[type="password"] {
+  width: 180px;
+}
+
+
+.form-register {
+  width: 50%;
+}
+
+.form-register .form-control {
+  position: relative;
+  font-size: 16px;
+  height: auto;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #999999;
+  background-color: #ffffff;
+}
+
+footer a {
+  color: #999999;
+}
+
+footer p {
+  float: right;
+  margin-right: 25px;
+}
+
+footer ul {
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 10px;
+}
+
+footer .company {
+  float: left;
+  margin-left: 25px;
+}
+
+footer .footer-nav {
+  float: right;
+  margin-right: 25px;
+  list-style: none;
+}
+
+.fake-browser-ui {
+  padding: 20px 0 0;
+  border-radius: 3px;
+  border-bottom: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  background: #ddd;
+  display: inline-block;
+  position: relative;
+  line-height: 0;
+}
+
+.fake-browser-ui .frame {
+  display: block;
+  height: 15px;
+  position: absolute;
+  top: 5px;
+  left: 1px;
+}
+
+.fake-browser-ui span {
+  height: 8px;
+  width: 8px;
+  border-radius: 8px;
+  background-color: #eee;
+  border: 1px solid #dadada;
+  float: left;
+  margin: 0 0 0 4px;
+}
+
+.hoverable {
+  -webkit-transition: -webkit-box-shadow .25s;
+  transition: -webkit-box-shadow .25s;
+  transition: box-shadow .25s;
+  transition: box-shadow .25s, -webkit-box-shadow .25s;
+}
+
+.hoverable:hover {
+  -webkit-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.red {
+  background-color: #F44336 !important;
+}
+
+.blue {
+  background-color: #2196F3 !important;
+}
+
+.orange {
+  background-color: #ff9800 !important;
+}
+
+.navbar {
+  background-color: #3399CC;
+}

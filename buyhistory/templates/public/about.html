@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container">
+  <h1 class="mt-5">About</h1>
+  <p class="lead">Data by <a href="https://keepa.com/">Keepa</a></p>
+
+  <hr>
+  <p class="text-justify">You can use all features right on Amazon by the usage of browser extensions.</p>
+  <div class="row" id="extensions">
+    <a class="col-md-1 col-2 p-1" href="https://addons.mozilla.org/firefox/addon/keepa/" data-toggle="tooltip"
+      title="Goto FireFox Add-ons"><img class="img-fluid"
+        src="{{static_url_for('static', filename='build/img/browser/firefox_128x128.png')}}"></a>
+    <a class="col-md-1 col-2 p-1" href="https://chrome.google.com/webstore/detail/neebplgakaahbhdphmkckjjcegoiijjo"
+      data-toggle="tooltip" title="Goto Chrome Web Store"><img class="img-fluid"
+        src="{{static_url_for('static', filename='build/img/browser/chrome_128x128.png')}}"></a>
+    <a class="col-md-1 col-2 p-1" href="https://chrome.google.com/webstore/detail/neebplgakaahbhdphmkckjjcegoiijjo"
+      data-toggle="tooltip" title="Chrome extension is compatible with Opera"><img class="img-fluid"
+        src="{{static_url_for('static', filename='build/img/browser/opera_128x128.png')}}"></a>
+    <a class="col-md-1 col-2 p-1"
+      href="https://microsoftedge.microsoft.com/addons/detail/ejefaeioamebhekmfaclajddbpnnobje" data-toggle="tooltip"
+      title="Install on Edge for Windows 10"><img class="img-fluid"
+        src="{{static_url_for('static', filename='build/img/browser/edgechromium_128x128.png')}}"></a>
+    <a class="col-md-1 col-2 p-1" href="https://apps.apple.com/us/app/id1533805339" data-toggle="tooltip"
+      title="Install on Safari 14"><img class="img-fluid"
+        src="{{static_url_for('static', filename='build/img/browser/safari_128x128.png')}}"></a>
+  </div>
+</div>
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript">
+  $('[data-toggle="tooltip"]').tooltip();
+</script>
+{% endblock %}

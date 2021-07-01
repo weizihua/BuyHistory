@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% block page_title %} 
+FewPage - https://www.amazon.{{domain}}/dp/{{asin}}
+{% endblock %}
+
+{% block content %}
+<div class="mr-4 ml-4">
+    <h1 class="display-4 mt-4">Amazon Price History</h1>
+
+    <form class="mt-4" id="queryForm" method="POST" action="{{ url_for('public.home') }}" role="query">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+        <div class="input-group">
+            {{form.address(class_="form-control")}}
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="submit" id="button-submit">Query</button>
+            </div>
+        </div>
+
+        <label class="form-check-label pt-0 mr-1" for="range">Range (days):</label>
+        <div class="form-check form-check-inline" id="range">
+            <input class="form-check-input" type="radio" name="range" id="7" value="7">
+            <label class="form-check-label mr-2" for="Radios1">7</label>
+            <input class="form-check-input" type="radio" name="range" id="31" value="31">
+            <label class="form-check-label mr-2" for="Radios2">31</label>
+            <input class="form-check-input" type="radio" name="range" id="90" value="90" checked>
+            <label class="form-check-label mr-2" for="Radios3">90</label>
+            <input class="form-check-input" type="radio" name="range" id="365" value="365">
+            <label class="form-check-label" for="Radios4">365</label>
+        </div>
+    </form>
+
+    <div class="mt-4 text-center">
+        <img class="img-fluid mr-auto"
+            src="https://graph.keepa.com/pricehistory.png?asin={{asin}}&domain={{domain}}&range={{range}}&width=800&height=350&salesrank=1">
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript">
+    $("#address").val("https://www.amazon.{{domain}}/dp/{{asin}}");
+    $("#{{range}}").prop("checked", true)
+</script>
+{% endblock %}
